@@ -1,6 +1,6 @@
 import './NavBar.css';
 
-function NavBar() {
+function NavBar({ children }) {
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -38,10 +38,11 @@ function NavBar() {
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li><a className="dropdown-item" href="#">Teclados</a></li>
                                     <li><a className="dropdown-item" href="#">Monitores</a></li>
-                                    <li><a className="dropdown-item" href="#">Mouses</a></li>
+                                    <li><a className="dropdown-item" href="#">Mouse</a></li>
                                 </ul>
                             </li>
                         </ul>
+                    {children}
                     </div>
                 </div>
             </nav>
@@ -50,3 +51,4 @@ function NavBar() {
 }
 
 export default NavBar;
+
