@@ -11,7 +11,8 @@ function App() {
   return (
     <div >
       <NavBar><CartWidget /></NavBar>
-      <ItemCount stock={6}/>
+      {/* <ItemCount stock={6}/> */}
+      <br/>
       <ItemListContainer />
     </div>
   );
