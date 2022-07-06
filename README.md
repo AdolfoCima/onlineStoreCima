@@ -1,3 +1,35 @@
+# GAMER STORE
+
+GAMER STORE es un ecommerce de hardware para PCs gamer.
+
+Por ahora cuenta con:
+- Una barra de navegación
+- Una página de inicio con todos los productos 
+- Un filtro por categorías
+- Tres diferentes categorías
+
+## Dependencias
+
+- Uso de Bootstrap para dar formato a la aplicación.
+- Uso de React Router Dom para la navegación.
+- Uso de Fontawesome para el ícono del carrito.
+
+## Aplicación en funcionamiento
+
+Por ahora la aplicación cuenta con un catálogo de productos en la página de incicio, con cards de productos.
+Cada card cuenta con un botón de ¨Ver más¨ el cuál nos lleva a la vista de detalle del producto. La vista de detalle cuenta con: nombre del producto, foto, precio, descripción, botón de ¨Volver¨ y botón de ¨Agregar al carrito¨. Todas las páginas cuentan con una barra de navegación con un menu desplegable con las categorías de los productos, al clickear en alguna categoría nos filtra dichos productos.
+
+### Autor
+
+Adolfo Cima
+2022 - Curso de React en CoderHouse
+
+
+
+
+
+
+<!-- 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -67,4 +99,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)  -->
