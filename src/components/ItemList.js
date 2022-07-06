@@ -1,15 +1,15 @@
 import React from 'react'
 import { Item } from './Item'
 
-export const ItemList = ({ productList }) => {
-
-    console.log('productList', productList)
+export const ItemList = ({ items }) => {
 
     return (
         // Item = ({ name, image, price, id }) => {
         <div className='container'>
-            <div className="row justify-content-evenly">
-                {productList.map((product) => <Item key={product.id} name={product.name} image={product.img} price={product.price} />)}
+            <div className="row justify-content-evenly row-cols-md-4 g-4">
+                {items?.map((item) => (
+                    <Item {...item} key={item.id} />
+                ))}
             </div>
         </div>
 

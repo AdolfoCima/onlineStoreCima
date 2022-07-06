@@ -1,0 +1,9 @@
+.detail-row {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 10px;
+
+    flex-wrap: wrap;
+    justify-content: center;
+}

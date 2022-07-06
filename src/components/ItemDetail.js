@@ -1,18 +1,25 @@
 import './ItemDetail.css'
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-export const ItemDetail = ({ name, image, price, id, description }) => {
+export const ItemDetail = ({
+    name,
+    img2,
+    price,
+    id,
+    description,
+}) => {
 
     return (
-        <div className="col" >
-            <h3>DETALLE</h3>
-            <div className="card">
-                <h5 className="card-title">{name}</h5>
-                <img src={image} alt={name} className='card-img-top' />
-                <div className="card-body">
+        <div className="card mb-3 detail-row container"  >
+            
+            <div className="card" >
+                <h1 className="card-title">{name}</h1>
+                <img src={img2} alt={`${id}-${name}`} className="card-img-top " />
+                <div className="card-body flex-col">
                     <p>${price}</p>
                     <p className='card-text'>{description}</p>
-                    <button className="btn btn-secondary btn_ver_mas">Volver</button>
+                    <Link to="/" className="btn btn-secondary btn_ver_mas">Volver</Link>
                     <button className="btn btn-primary btn_ver_mas">Agregar al Carrito</button>
                 </div>
             </div>

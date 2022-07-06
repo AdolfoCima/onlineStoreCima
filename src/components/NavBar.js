@@ -1,13 +1,15 @@
 import './NavBar.css';
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
-function NavBar({ children }) {
+export const NavBar =({ children }) => {
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">
+                    <NavLink to='/' className="navbar-brand active"  >
                         GAMER STORE
-                    </a>
+                    </NavLink>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -22,23 +24,18 @@ function NavBar({ children }) {
                     <div className="collapse navbar-collapse" id="navbarText">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">
+                                <NavLink to='/' className="nav-link active" aria-current="page">
                                     Inicio
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link active" href="#">
-                                    Novedades
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a className="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Productos
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a className="dropdown-item" href="#">Teclados</a></li>
-                                    <li><a className="dropdown-item" href="#">Monitores</a></li>
-                                    <li><a className="dropdown-item" href="#">Mouse</a></li>
+                                    <li><Link className="dropdown-item" to="/category/teclados">Teclados</Link></li>
+                                    <li><Link className="dropdown-item" to="/category/monitores">Monitores</Link></li>
+                                    <li><Link className="dropdown-item" to="/category/mouse">Mouse</Link></li>
                                 </ul>
                             </li>
                         </ul>
@@ -50,5 +47,5 @@ function NavBar({ children }) {
     );
 }
 
-export default NavBar;
+
 

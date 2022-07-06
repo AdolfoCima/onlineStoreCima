@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
 
 import './CartWidget.css';
 
-function CartWidget() {
+export const CartWidget= () => {
   return (
     <header>
       {/* <i  className="fa-regular fa-cart-shopping btn btn-primary"></i>  */}
@@ -13,4 +14,4 @@ function CartWidget() {
   );
 }
 
-export default CartWidget;
+

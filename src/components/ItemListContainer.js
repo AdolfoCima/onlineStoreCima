@@ -1,36 +1,47 @@
 import './ItemListContainer.css';
-import { productList } from '../data/asyncMock'
+import { data } from '../data/data'
 import React, { useEffect, useState } from 'react';
 import { ItemList } from './ItemList';
+/* import de useParams para traer el parametro de la URL */
+import { useParams } from 'react-router-dom';
 
-function ItemListContainer() {
 
-    const [products, setProducts] = useState([])
-    const [isLoading, setIsLoading] = useState([])
+export const ItemListContainer = () => {
 
-    const getProducts = () => {
-        setIsLoading(true)
-        return new Promise((resolve, reject) =>
-            setTimeout(() => {
-                productList.length > 0 ? resolve(productList) : reject("No hay datos")
-            }, 2000)
-        )
-    }
+    const [items, setItems] = useState([]);
+    //loading... 
+    const [isLoading, setIsLoading] = useState([true]);
 
-    //Utilizando Promise
+    const { catId } = useParams();
+
     useEffect(() => {
-        getProducts()
-            .then(res => setProducts(res))
-            .then(err => console.log(err))
-            .then(() => setIsLoading(false))
-    }, [])
 
-    return (
+        setIsLoading(true);
+        const getItems = new Promise((resolve) => {
+            setTimeout(() => {
+                /*si catId tiene datos filtra, sino trae todos los productos del array */
+                const myData = catId
+                    ? data.filter((item) => item.category === catId)
+                    : data;
+
+                resolve(myData);
+            }, 1000);
+        });
+
+        getItems
+            .then((res) => {
+                setItems(res);
+            })
+            .finally(() => setIsLoading(false));
+    }, [catId]);
+
+    return isLoading ? (
+        <h2>Loading...</h2>
+    ) : (
+
         <>
-            {isLoading && <p>Loading...</p>}
-            <ItemList productList={products} />
+            <ItemList items={items} />
         </>
     )
 }
 
-export default ItemListContainer;
