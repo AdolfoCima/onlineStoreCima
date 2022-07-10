@@ -7,16 +7,6 @@ export const CartContext = createContext({});
 
 const { Provider } = CartContext;
 
-// const cartItem = [
-//     {
-//         item: {
-//             nombre:
-//             precio:
-//         },
-//         quantity: 
-//     }
-// ]
-
 export const CartProvider = ({ defoultValue = [], children }) => {
     const [cart, setCart] = useState(defoultValue);
 
