@@ -5,7 +5,10 @@ import { NavBar } from './components/NavBar';
 import { CartWidget } from './components/CartWidget';
 import { ItemListContainer } from './components/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer';
-// import ItemCount from './components/ItemCount';
+import { Cart } from './components/cart';
+
+
+
 
 function App() {
   return (
@@ -14,9 +17,9 @@ function App() {
       <NavBar><CartWidget /></NavBar>
       {/* <ItemCount stock={6}/> */}
       <Routes>
-        
+
         <Route path='/' element={<ItemListContainer />} />
-        
+
         {/* Filtro por categoria */}
         <Route
           path="/category/:catId"
@@ -24,7 +27,10 @@ function App() {
         />
 
         {/* vista de detalle */}
-        <Route path="/product/:itemId" element={<ItemDetailContainer />} />
+        <Route path="/product/:itemId" element={<ItemDetailContainer/>} />
+
+        <Route path='/cart' element={<Cart />} />
+
 
         <Route path="*" element={<Navigate to="/" />} />
 

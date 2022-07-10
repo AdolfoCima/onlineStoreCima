@@ -3,7 +3,19 @@
     flex-direction: row;
     padding: 0;
     margin: 10px;
-
+    
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.bold{
+    font-weight: bold;
+    font-size: larger;
+}
+.itemCount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: auto;
+    padding: 1rem;
 }
