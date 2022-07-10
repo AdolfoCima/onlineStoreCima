@@ -5,7 +5,7 @@ import { NavBar } from './components/NavBar';
 import { CartWidget } from './components/CartWidget';
 import { ItemListContainer } from './components/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer';
-import { Cart } from './components/cart';
+import { Cart } from './components/Cart';
 
 
 
@@ -29,7 +29,7 @@ function App() {
         {/* vista de detalle */}
         <Route path="/product/:itemId" element={<ItemDetailContainer/>} />
 
-        <Route path='/cart' element={<Cart />} />
+        <Route path='/Cart' element={<Cart />} />
 
 
         <Route path="*" element={<Navigate to="/" />} />
