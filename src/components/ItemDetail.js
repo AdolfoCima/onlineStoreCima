@@ -6,9 +6,12 @@ import { CartContext } from './CartContext';
 
 export const ItemDetail = (props) => {
     const { name, img2, price, id, description, stock } = props;
-    const [purchaseCompleted, setPurchaseCompleted] = useState(false);
-
-    const { addToCart } = useContext(CartContext);
+    const { addToCart, cart } = useContext(CartContext);
+    const [purchaseCompleted, setPurchaseCompleted] = useState(() =>{
+        return cart.some((cartItem)=> {
+            return cartItem.item.id == id
+        } )
+    });
 
     const onAdd = (quantityToAdd) => {
         setPurchaseCompleted(true);

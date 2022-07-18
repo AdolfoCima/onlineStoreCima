@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 export const Item = ({ name, img, price, id, description,stock }) => {
+    
 
     return (
         <div className="col" >

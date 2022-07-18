@@ -4,8 +4,8 @@ import { Link, NavLink } from 'react-router-dom';
 
 export const NavBar =({ children }) => {
     return (
-        <header>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <header className="sticky-top">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
                 <div className="container-fluid">
                     <NavLink to='/' className="navbar-brand active"  >
                         GAMER STORE
