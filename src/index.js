@@ -6,6 +6,24 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { CartProvider } from "./components/CartContext";
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCvpWfYDoFzRHhFRNXsb_4tSal0KMhXQoc",
+  authDomain: "onlinestorecima.firebaseapp.com",
+  projectId: "onlinestorecima",
+  storageBucket: "onlinestorecima.appspot.com",
+  messagingSenderId: "1022117562738",
+  appId: "1:1022117562738:web:904afebad93d77bac875eb"
+};
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

@@ -1,59 +1,40 @@
 import './ItemDetailContainer.css';
-import { data } from '../data/data'
+import { data } from '../data/data';
 import React, { useEffect, useState } from 'react';
-import { ItemDetail } from "./ItemDetail";
-import { useParams } from "react-router-dom";
+import { ItemDetail } from './ItemDetail';
+import { useParams } from 'react-router-dom';
+import {
+  collection,
+  getDocs,
+  where,
+  query,
+  getFirestore,
+} from 'firebase/firestore';
 
 export const ItemDetailContainer = () => {
+  const [product, setProduct] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
-    const [product, setProduct] = useState({});
-    const [isLoading, setIsLoading] = useState(true);
+  const { itemId } = useParams();
 
-    const { itemId } = useParams();
+  console.log(itemId);
 
-    console.log(itemId);
-
-    useEffect(() => {
+  useEffect(() => {
     setIsLoading(true);
-    const getItems = new Promise((resolve) => {
-      setTimeout(() => {
-        const myData = data.find((item) => item.id === itemId);
+    const dataBase = getFirestore();
+    // const getItems = new Promise((resolve) => {
+    //   setTimeout(() => {
+    //     const myData = data.find((item) => item.id === itemId);
 
-        resolve(myData);
-      }, 1000);
-    });
-
-    getItems
-      .then((res) => {
-        setProduct(res);
-      })
+    //     resolve(myData);
+    //   }, 1000);
+    // });
+    const q = query(collection(dataBase, 'ItemCollection'), where('id', '==', itemId));
+    getDocs(q).then((res) => {
+      setProduct(res.docs[0].data())
+    })
       .finally(() => setIsLoading(false));
-    }, [itemId]);
+  }, [itemId]);
 
-    return isLoading ? <h2>Loading...</h2> : <ItemDetail {...product} />;
- 
-}
-
-
-// const [details, setDetails] = useState([])
-
-// const getDetails = () => {
-    
-//     return new Promise((resolve, reject) =>
-//         setTimeout(() => {
-//             data.length > 0 ? resolve( data ) : reject("No hay datos")
-//         }, 2000)
-//     )
-// }
-
-// useEffect(() => {
-//     getDetails()
-//         .then(res => setDetails(res))
-//         .then(err => console.log(err))
-// }, [])
-
-// return (
-//     <>
-//         <DetailList data={details} />
-//     </>
-// )
+  return isLoading ? <h2>Loading...</h2> : <ItemDetail {...product} />;
+};
