@@ -57,7 +57,6 @@ export const CartProvider = ({ defoultValue = [], children }) => {
     })
   }
 
-
   const context = {
     cart,
     setCart,
