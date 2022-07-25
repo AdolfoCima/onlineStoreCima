@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { CartItem } from './CartItem';
 import { CartContext } from './CartContext';
-import Swal from 'sweetalert2';
+import { CartForm } from './CartForm';
+import { Link } from 'react-router-dom';
+
 
 export const CartItemList = () => {
-    const { cart, clearCart } = useContext(CartContext);
+    const { cart, cartForm } = useContext(CartContext);
 
     return (
         // Item = ({ name, image, price, id }) => {
@@ -25,17 +27,15 @@ export const CartItemList = () => {
             </div>
             <div>
                 <h2>
-                    Total: $ 
+                    Total: $
                     {cart.reduce((acumulator, cartItem) => {
                         return acumulator + cartItem.quantity * cartItem.item.price;
                     }, 0)}
+
                 </h2>
             </div>
-            <button className="btn btn-success" onClick={() =>{clearCart(); return  Swal.fire({
-                title: 'Gracias por su compra!',
-                icon: 'warning',
-                timer: 2000,
-            });}}>COMPRAR</button>
+            <Link to={'/CartForm'} type='button'  className="btn btn-success" 
+            >Finalizar compra</Link>
         </div>
     );
 };

@@ -6,6 +6,7 @@ import { ItemListContainer } from './components/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer';
 import { Cart } from './components/Cart';
 import { useState } from 'react';
+import { CartForm } from './components/CartForm';
 
 
 
@@ -31,7 +32,10 @@ function App() {
         {/* vista de detalle */}
         <Route path="/product/:itemId" element={<ItemDetailContainer/>} />
 
-        <Route path='/Cart' element={<Cart></Cart>} />
+        <Route path='/Cart' element={<Cart/>} />
+        
+        <Route path='/CartForm' element={<CartForm/>} />
+        
 
 
         <Route path="*" element={<Navigate to="/" />} />

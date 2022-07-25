@@ -34,7 +34,7 @@ export const ItemDetail = (props) => {
                 <div className="itemCount">
                     {purchaseCompleted ? (
                         <Link to={'/cart'} className="btn btn-success ">
-                            Finalizar Compra
+                            Ver Carrito
                         </Link>
                     ) : (
                         <ItemCount stock={stock} onAdd={onAdd} />
