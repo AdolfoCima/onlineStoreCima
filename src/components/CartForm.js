@@ -44,6 +44,7 @@ export const CartForm = (props) => {
                     id: CartItem.item.id,
                     title: CartItem.item.name,
                     price: CartItem.item.price,
+                    quantity: CartItem.quantity,
                 }
 
             }),
