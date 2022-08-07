@@ -5,7 +5,6 @@ import { CartWidget } from './components/CartWidget';
 import { ItemListContainer } from './components/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer';
 import { Cart } from './components/Cart';
-import { useState } from 'react';
 import { CartForm } from './components/CartForm';
 
 

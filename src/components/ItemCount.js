@@ -61,12 +61,11 @@ export const ItemCount = ({ stock, onAdd, isInCartListView, quantity=0 }) => {
                 </button>
                 {isInCartListView ? '':<button
                     type="button"
-                    className="btn btn-primary btn_ver_mas"
+                    className="btn btn-primary btn_ver_mas addToCart"
                     onClick={() => onAdd(quantityToAdd)}
                 >
                 Agregar al Carrito
                 </button>}
-                {/* <button type="button" className="btn btn-dark btn_ver_mas" onClick={reset}>Reiniciar</button> */}
             </div>
         </>
     );

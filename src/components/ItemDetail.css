@@ -1,11 +1,17 @@
+
+
 .detail-row {
     display: flex;
     flex-direction: row;
     padding: 0;
-    margin: 10px;
+    margin-left: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    position: relative;
     
-    flex-wrap: wrap;
+    
     justify-content: center;
+    align-content: center;
 }
 
 .bold{

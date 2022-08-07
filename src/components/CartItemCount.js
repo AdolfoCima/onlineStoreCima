@@ -3,14 +3,13 @@ import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import React from 'react';
 
-export const CartItemCount = ({ stock, quantity=0, onAdd }) => {
+export const CartItemCount = ({ stock, quantity = 0, onAdd }) => {
     const [quantityToAdd, setQuantityToAdd] = useState(quantity);
 
-    
     const addHandler = () => {
         console.log('se esta sumando');
         if (quantityToAdd < stock) {
-            onAdd(quantityToAdd + 1)
+            onAdd(quantityToAdd + 1);
             setQuantityToAdd(quantityToAdd + 1);
         } else {
             console.log(`Alcanzaste el maximo de ${stock} unidades disponibles!`);
@@ -44,7 +43,7 @@ export const CartItemCount = ({ stock, quantity=0, onAdd }) => {
                     className="btn btn-dark btn_ver_mas"
                     onClick={removeHandler}
                 >
-                - 
+                    -
                 </button>
                 <h3>{quantityToAdd}</h3>
                 <button
@@ -52,10 +51,8 @@ export const CartItemCount = ({ stock, quantity=0, onAdd }) => {
                     className="btn btn-dark btn_ver_mas"
                     onClick={addHandler}
                 >
-                 + 
+                    +
                 </button>
-                
-                {/* <button type="button" className="btn btn-dark btn_ver_mas" onClick={reset}>Reiniciar</button> */}
             </div>
         </>
     );

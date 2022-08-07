@@ -2,11 +2,16 @@
 
 GAMER STORE es un ecommerce de hardware para PCs gamer.
 
-Por ahora cuenta con:
+Cuenta con:
 - Una barra de navegación
 - Una página de inicio con todos los productos 
 - Un filtro por categorías
 - Tres diferentes categorías
+- Un ícono de carrito funcional
+- Una página de detalle para cada producto
+- Cada detalle tiene su respectivo contador para agregar más de un mismo producto
+- Se puede navegar en la aplicación sin perder el estado del carrito
+- Una vez finalizada la compra, se guarda la orden de compra con los datos del comprador y se le muestra al usuario el código de dicha orden, el carrito se limpia y se redirecciona automáticamente a la página de inicio.
 
 ## Dependencias
 
@@ -16,7 +21,7 @@ Por ahora cuenta con:
 
 ## Aplicación en funcionamiento
 
-Por ahora la aplicación cuenta con un catálogo de productos en la página de incicio, con cards de productos.
+La aplicación cuenta con un catálogo de productos en la página de incicio, con cards de productos.
 Cada card cuenta con un botón de ¨Ver más¨ el cuál nos lleva a la vista de detalle del producto. La vista de detalle cuenta con: nombre del producto, foto, precio, descripción, botón de ¨Volver¨ y botón de ¨Agregar al carrito¨. Todas las páginas cuentan con una barra de navegación con un menu desplegable con las categorías de los productos, al clickear en alguna categoría nos filtra dichos productos.
 
 ### Autor

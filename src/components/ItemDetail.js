@@ -19,8 +19,8 @@ export const ItemDetail = (props) => {
     };
 
     return (
-        <div className="card mb-3 detail-row container">
-            <div className="card">
+        <div className=" detail-row container w-50 h-50 d-sm-flex">
+            <div className="card d-sm-flex">
                 <h1 className="card-title">{name}</h1>
                 <img src={img2} alt={`${id}-${name}`} className="card-img-top " />
                 <div className="card-body flex-col">
@@ -28,8 +28,6 @@ export const ItemDetail = (props) => {
                     {/* <p>Stock: {stock}</p> */}
                     <p className="card-text">{description}</p>
                 </div>
-
-                {/* <ItemCount stock={stock} /> */}
 
                 <div className="itemCount">
                     {purchaseCompleted ? (
@@ -40,10 +38,10 @@ export const ItemDetail = (props) => {
                         <ItemCount stock={stock} onAdd={onAdd} />
                     )}
                 </div>
-            </div>
             <Link to="/" type="button" className="btn btn-secondary">
                 Volver
             </Link>
+            </div>
         </div>
     );
 };

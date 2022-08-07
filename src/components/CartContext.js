@@ -2,6 +2,7 @@ import React from 'react';
 import { createContext, useState } from 'react';
 import Swal from 'sweetalert2';
 
+
 export const CartContext = createContext({});
 
 const { Provider } = CartContext;
@@ -45,17 +46,20 @@ export const CartProvider = ({ defoultValue = [], children }) => {
   const cartTotal = () => {
     return cart.reduce((acumulator, cartItem) => {
       return acumulator + cartItem.quantity * cartItem.item.price;
-    }, 0)
-  }
+    }, 0);
+  };
 
   const thanksForYourPurchase = (id) => {
-    clearCart(); return Swal.fire({
+    clearCart();
+    return Swal.fire({
       text: 'orderId: ' + id,
       title: 'Gracias por su compra!',
       icon: 'success',
       timer: 3000,
-    })
-  }
+    });
+  };
+
+  
 
   const context = {
     cart,
